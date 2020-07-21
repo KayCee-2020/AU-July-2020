@@ -1,0 +1,29 @@
+[{
+		firstName:'test',
+		lasttName:'test',
+		age:'20',
+		empId:'2345',
+		city:'hyd'
+		},
+		{
+		firstName:'test',
+		lasttName:'test',
+		age:'20',
+		empId:'23456',
+		city:'hyd'
+		}]
+	
+	
+	
+	
+1.Store 2 record on page load to session storage
+2.Add user , Edit User , Delete user , sort user.
+
+localStorage and sessionStorage accomplish the exact same thing and have the same API, but with sessionStorage the data is persisted only until the window or tab is closed, while with localStorage the data is persisted until the user manually clears the browser cache or until your web app clears the data.
+
+you need to frame the object based on form data
+the name etc what you capture from the User
+
+
+var add = (function(){var counter=0;
+                      return function() { return counter+=1;}})();
