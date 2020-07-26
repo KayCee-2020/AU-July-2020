@@ -1,0 +1,40 @@
+<h2>Click on column for sorting</h2>
+
+<table border="1" width="80%">
+    <tr *ngFor="let user of name">
+      <th (click) ="sortUser1()">{{user.first}}</th>
+      <th (click) ="sortUser2()">{{user.last}}</th>
+      <th (click) ="sortUser3()">{{user.age}}</th>
+      <th (click) ="sortUser4()">{{user.empId}}</th>
+      <th (click) ="sortUser5()">{{user.city}}</th>
+    </tr>
+    
+   
+  </table>
+
+  <h1> Add User</h1>
+
+
+  <input [(ngModel)]='newUser.first' value="Input Name" placeholder="Add first name"/>
+  <input [(ngModel)]='newUser.last' value="Input Name" placeholder="Add last name"/>
+  <input [(ngModel)]='newUser.age' value="Input Name" placeholder="Add age"/>
+  <input [(ngModel)]='newUser.empId' value="Input Name" placeholder="Add employee Id"/>
+  <input [(ngModel)]='newUser.city' value="Input Name" placeholder="Add city"/>
+  <button (click) ="addUser()">Add User</button>
+
+<h1>Add details to update based on empID</h1>
+  <input [(ngModel)]='newUser.first' value="Input Name" placeholder="Update first name"/>
+  <input [(ngModel)]='newUser.last' value="Input Name" placeholder="update last name"/>
+  <input [(ngModel)]='newUser.age' value="Input Name" placeholder="update age"/>
+  <input [(ngModel)]='newUser.empId' value="Input Name" placeholder="update employee Id"/>
+  <input [(ngModel)]='newUser.city' value="Input Name" placeholder="update city"/>
+  <button (click) ="updateUser()">Update User</button>
+
+
+<h1>delete user based on empID</h1>
+<input [(ngModel)]='delkey' value="Input Name" placeholder="delete employee of employee Id"/>
+<button (click) ="deleteUser()">Update User</button>
+
+
+
+  <h1>{{newUser.city}}</h1>
