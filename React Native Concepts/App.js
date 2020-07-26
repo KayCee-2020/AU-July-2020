@@ -1,23 +1,48 @@
-import React from "react";
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
+import Login from './src/components/Login';
+import WorkList from './src/components/WorkList';
+import { StyleSheet, Text, View } from 'react-native';
 
-import WorkList from "./src/components/WorkList"
-import Login from "./src/components/Login"
-import Dashboard from "./src/components/Dashboard";
 
 const Stack = createStackNavigator();
 
-function App() {
+export default function App() {
   return (
+
     <NavigationContainer>
+     
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="WorkList" component={WorkList} />
+        
+        
       </Stack.Navigator>
     </NavigationContainer>
+   
+  
   );
 }
 
-export default App;
+const Styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    loginTextStyle: {
+        fontSize: 25,
+        fontWeight: "700",
+        marginVertical: 20
+    },
+    textInputStyle: {
+        borderColor: "black",
+        borderWidth: 1,
+        borderRadius: 5,
+        fontSize: 20,
+        padding: 5,
+        width: "60%",
+        marginBottom: 20
+    }
+})

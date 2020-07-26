@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Text, TextInput, View, StyleSheet, Button, AsyncStorage } from "react-native";
 
-const Login = ({ navigation }) => {
+
+const Login = ({navigation}) =>{
     const [username, setUserName] = useState("");
-    const [password, setPassword] = useState("");
 
     useEffect(() => {
         checkAuth()
@@ -11,28 +11,25 @@ const Login = ({ navigation }) => {
 
     const checkAuth = async () => {
         const userName = await AsyncStorage.getItem("username");
-        if (userName && password) {
-            navigation.navigate("Dashboard");
+        if (userName) {
+            navigation.navigate("WorkList");
         }
         return;
     }
 
     const login = async () => {
         await AsyncStorage.setItem("username", username);
-        await AsyncStorage.setItem("password",password);
-        navigation.navigate("Dashboard");
+        navigation.navigate("WorkList");
     }
 
     return (
         <View style={Styles.container}>
             <Text style={Styles.loginTextStyle}>Login</Text>
             <TextInput style={Styles.textInputStyle} onChangeText={(text) => setUserName(text)} placeholder="Please enter your username..." />
-            <TextInput style={Styles.textInputStyle} onChangeText={(text) => setPassword(text)} placeholder="Please enter your password..." />
-            <Button title="Log me in" onPress={login} />
+            <Button title="Login" onPress={login} />
         </View>
     )
 }
-
 
 const Styles = StyleSheet.create({
     container: {
