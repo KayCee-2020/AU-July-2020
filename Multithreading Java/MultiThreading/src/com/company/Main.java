@@ -58,7 +58,10 @@ public class Main {
         int n = myObj.nextInt();
 
         BlockingQueue bq = new BlockingQueue();
-        Thread producer = new Thread(()->bq.put());
+
+        Thread producer=new Thread(()-> {
+                bq.put();
+        });
         producer.start();
 
         ExecutorService consumer = Executors.newFixedThreadPool(n);
