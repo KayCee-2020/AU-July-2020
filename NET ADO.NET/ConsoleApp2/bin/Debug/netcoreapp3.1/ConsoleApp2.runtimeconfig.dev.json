@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\blin\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\blin\\.nuget\\packages"
+    ]
+  }
+}
